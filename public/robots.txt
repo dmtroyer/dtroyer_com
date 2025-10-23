@@ -1,0 +1,58 @@
+### robots.txt
+# Purpose: Allow general search engine indexing while opting out of AI/LLM dataset crawling.
+# NOTE: robots.txt is advisory. Non-compliant scrapers may ignore these directives or spoof user-agents.
+# Maintain this list periodically as new AI crawlers publish user-agent strings.
+
+# Disallow known AI / LLM / broad dataset collection crawlers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Anthropic-AI
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: OAI-Research
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: dataforseo
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+# Optional broader block (commented out to avoid excluding legitimate frameworks)
+# User-agent: Scrapy
+# Disallow: /
+
+# Allow all other crawlers (standard search engines, etc.)
+User-agent: *
+Allow: /

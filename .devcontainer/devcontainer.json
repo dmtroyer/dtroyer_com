@@ -1,0 +1,49 @@
+{
+  "name": "Node + Cloudflare Workers",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": { "NODE_VERSION": "20" }
+  },
+
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+  // Wrangler dev default port
+  "forwardPorts": [8787],
+
+  // Install wrangler locally so versions are pinned in your lockfile
+  "postCreateCommand": "corepack enable && pnpm i && pnpm add -D wrangler",
+
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "username": "node",
+      "uid": "1000",
+      "gid": "1000",
+      "installZsh": false
+    }
+  },
+
+  // Optionally surface your API token/account id via env (or `wrangler login`)
+  // If you prefer secrets, leave this blank and run `wrangler login` inside the container.
+  "containerEnv": {
+    // "CLOUDFLARE_API_TOKEN": "",
+    // "CLOUDFLARE_ACCOUNT_ID": ""
+  },
+
+  "remoteUser": "node",
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true
+      },
+      "extensions": [
+        "cloudflare.cloudflare-vscode",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-next"
+      ]
+    }
+  }
+}
