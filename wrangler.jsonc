@@ -1,0 +1,9 @@
+{
+  "name": "dtroyer-com",
+  "main": "src/worker.ts",
+  "workers_dev": false,
+  "compatibility_date": "2025-10-23",
+  "assets": {
+    "directory": "public"
+  }
+}
